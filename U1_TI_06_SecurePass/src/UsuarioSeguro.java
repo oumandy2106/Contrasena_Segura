@@ -31,11 +31,12 @@ public class UsuarioSeguro{
         } else {
             this.password = password;
         }
-    }
 
-    public void autenticar() {
-        System.out.println(asciiText.matches("\\A\\p{ASCII}*\\z"));
     }
-    }
+}
+
+public {
+
+}
 
 
