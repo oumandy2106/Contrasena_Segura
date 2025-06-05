@@ -1,7 +1,9 @@
 public class UsuarioSeguro{
     private String nombreUsuario;
     private String password;
-    private boolean letraMayuscula;
+    private boolean letraMayuscula = false;
+    private boolean letraMinuscula =false;
+    private boolean numero = false;
     private char ascii;
 
     public boolean isLetraMayuscula() {
@@ -43,15 +45,22 @@ public class UsuarioSeguro{
             this.password = password;
         }
     }
-    public boolean pruebAscii(){
+    public void pruebAscii(){
         for (int i = 0; i < password.length(); i++) {
         char ascii = password.charAt(i);
         if (ascii >= 65 && ascii <= 90) {
-
+            letraMayuscula = true;
+        } else if (ascii >= 97 && ascii <= 122) {
+            letraMinuscula = true;
+        } else if (ascii >= 48 && ascii <= 57) {
+            numero = true;
         }
-
         }
-        return (int) ascii;
+        if (letraMayuscula && letraMinuscula && numero) {
+            System.out.println("Password segura. Login completo ");
+        } else{
+            System.out.println("Password insegura. Login completo ");
+        }
     }
 
 
