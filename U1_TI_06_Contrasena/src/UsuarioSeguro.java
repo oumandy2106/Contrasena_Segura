@@ -1,6 +1,17 @@
 public class UsuarioSeguro{
     private String nombreUsuario;
     private String password;
+    private boolean letraMayuscula;
+    private char ascii;
+
+    public boolean isLetraMayuscula() {
+        return letraMayuscula;
+    }
+
+    public void setLetraMayuscula(boolean letraMayuscula) {
+        this.letraMayuscula = letraMayuscula;
+    }
+
 
     //metodo
     public UsuarioSeguro(String nombreUsuario, String password) {
@@ -32,10 +43,18 @@ public class UsuarioSeguro{
             this.password = password;
         }
     }
+    public boolean pruebAscii(){
+        for (int i = 0; i < password.length(); i++) {
+        char ascii = password.charAt(i);
+        if (ascii >= 65 && ascii <= 90) {
 
-    public void autenticar() {
-        System.out.println(asciiText.matches("\\A\\p{ASCII}*\\z"));
+        }
+
+        }
+        return (int) ascii;
     }
+
+
     }
 
 
