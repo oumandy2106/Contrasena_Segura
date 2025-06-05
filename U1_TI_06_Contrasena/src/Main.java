@@ -9,6 +9,8 @@ public class Main {
         String password = sc.nextLine();
         //instancia
         UsuarioSeguro usuario = new UsuarioSeguro(nombreUsuario, password);
+        String devolver = usuario.pruebAscii();
+        System.out.println(devolver);
     }
 }
 
